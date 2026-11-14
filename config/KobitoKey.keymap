@@ -4,6 +4,15 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+&mt {
+    flavor = "balanced";
+    quick-tap-ms = <200>; // TAP & HOLD でTAP側のキーが長押し扱いになる設定
+};
+
+&lt {
+    quick-tap-ms = <200>; // TAP & HOLD でTAP側のキーが長押し扱いになる設定
+};
+
 / {
     combos {
         compatible = "zmk,combos";
