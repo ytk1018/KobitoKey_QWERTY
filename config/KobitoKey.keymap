@@ -8,28 +8,44 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_eisu {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&kp LANG2>;
-        };
-
-        combo_kana {
-            timeout-ms = <50>;
+        left_click {
+            bindings = <&mkp MB1>;
             key-positions = <16 17>;
-            bindings = <&kp LANG1>;
         };
 
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
+        right_click {
+            bindings = <&mkp MB2>;
+            key-positions = <17 18>;
         };
 
-        combo_tab {
-            timeout-ms = <50>;
-            key-positions = <10 11>;
+        middle_click {
+            bindings = <&mkp MB3>;
+            key-positions = <16 18>;
+        };
+
+        han_zen {
+            bindings = <&kp GRAVE>;
+            key-positions = <1 2>;
+        };
+
+        shift_tab {
+            bindings = <&kp LS(TAB)>;
+            key-positions = <21 22>;
+        };
+
+        tab {
             bindings = <&kp TAB>;
+            key-positions = <22 23>;
+        };
+
+        space {
+            bindings = <&kp SPACE>;
+            key-positions = <11 12 13>;
+        };
+
+        enter {
+            bindings = <&kp ENTER>;
+            key-positions = <17 18 16>;
         };
     };
 
@@ -38,40 +54,58 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp W     &kp E     &kp R        &kp T      &kp Y     &kp U        &kp I      &kp O      &kp P
-&kp A      &kp S     &kp D     &kp F        &kp G      &kp H     &kp J        &kp K      &kp L      &kp SEMI
-&kp Z      &kp X     &kp C     &kp V        &kp B      &kp N     &kp M        &kp COMMA  &kp DOT    &kp APOS
-&kp LSHFT  &kp LALT  &kp LCMD  &lt 2 SPACE  &kp LCTRL  &kp BSPC  &lt 1 ENTER  &kp RSHFT  &kp RSHFT  &mt LALT SLASH
+&kp Q      &kp SEMICOLON  &kp SLASH    &kp COMMA    &kp PERIOD  &kp W               &kp R            &kp Y         &kp M  &kp P
+&kp A      &kp I          &kp U        &kp E        &kp O       &kp K               &kp S            &kp T         &kp N  &kp H
+&kp Z      &kp X          &kp C        &kp V        &kp L       &kp G               &kp J            &kp D         &kp F  &lt 4 B
+&kp LCTRL  &kp LSHFT      &lt 4 ENTER  &lt 3 SPACE  &lt 2 TAB   &mt LALT BACKSPACE  &mt LSHFT MINUS  &kp LEFT_WIN  &mo 5  &kp SQT
             >;
         };
 
-        layer1 {
-            label = "NUMBER";
+        MOUSE_AML {
+            label = "MOUSE_AML";
             bindings = <
-&kp N0     &kp N1  &kp N2  &kp N3     &trans  &kp MINUS  &trans     &kp UP    &trans     &trans
-&kp EQUAL  &kp N4  &kp N5  &kp N6     &trans  &kp PLUS   &kp LEFT   &kp DOWN  &kp RIGHT  &trans
-&trans     &kp N7  &kp N8  &kp N9     &trans  &kp ASTRK  &kp SLASH  &kp LBKT  &kp RBKT   &trans
-&trans     &trans  &trans  &kp LSHFT  &trans  &trans     &trans     &trans    &trans     &trans
+&kp ESCAPE  &kp LC(SEMICOLON)  &kp LC(SLASH)  &kp LC(R)  &kp LC(T)      &kp LC(RIGHT_BRACKET)  &kp PAGE_UP  &kp UP    &kp PAGE_DOWN  &kp LC(BSLH)
+&kp LC(A)   &kp LC(S)          &kp LC(D)      &kp LC(F)  &kp LC(G)      &kp HOME               &kp LEFT     &kp DOWN  &kp RIGHT      &kp END
+&kp LC(Z)   &kp LC(X)          &kp LC(C)      &kp LC(V)  &kp LC(LS(K))  &mkp MB4               &mkp MB1     &mkp MB3  &mkp MB2       &trans
+&trans      &trans             &trans         &trans     &trans         &trans                 &kp GRAVE    &trans    &trans         &kp LC(COLON)
             >;
         };
 
-        layer2 {
-            label = "FUNCTION";
-            bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F1   &kp F2   &kp F3  &kp F4  &kp F5
-&trans        &trans        &trans        &trans        &bt BT_CLR      &kp F6   &kp F7   &kp F8  &kp F9  &kp F10
-&trans        &trans        &trans        &trans        &bt BT_CLR_ALL  &kp F11  &kp F12  &trans  &trans  &trans
-&trans        &trans        &trans        &trans        &trans          &kp DEL  &trans   &trans  &trans  &trans
-            >;
-        };
-
-        layer3 {
+        MOUSE {
             label = "MOUSE";
             bindings = <
-&trans     &trans  &trans    &trans    &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans     &trans  &trans    &trans    &trans  &trans  &trans    &trans    &trans    &trans
-&trans     &trans  &trans    &trans    &trans  &trans  &trans    &trans    &trans    &trans
-&kp LSHFT  &trans  &kp LCMD  &kp LALT  &to 0   &trans  &trans    &trans    &to 0     &kp RALT
+&kp ESCAPE  &kp LC(SEMICOLON)  &kp LC(SLASH)  &kp LC(R)  &kp LC(T)      &kp LC(RIGHT_BRACKET)  &kp PAGE_UP  &kp UP    &kp PAGE_DOWN  &kp LC(BSLH)
+&kp LC(A)   &kp LC(S)          &kp LC(D)      &kp LC(F)  &kp LC(G)      &kp HOME               &kp LEFT     &kp DOWN  &kp RIGHT      &kp END
+&kp LC(Z)   &kp LC(X)          &kp LC(C)      &kp LC(V)  &kp LC(LS(K))  &mkp MB4               &mkp MB1     &mkp MB3  &mkp MB2       &trans
+&trans      &trans             &trans         &trans     &trans         &trans                 &kp GRAVE    &trans    &trans         &kp LC(COLON)
+            >;
+        };
+
+        NUM {
+            label = "NUM";
+            bindings = <
+&kp F1  &kp F2   &kp F3   &kp F4   &kp PSCRN  &trans    &kp N7                &kp N8  &kp N9  &kp LEFT_BRACKET
+&kp F5  &kp F6   &kp F7   &kp F8   &trans     &kp INT3  &kp N4                &kp N5  &kp N6  &kp RIGHT_BRACKET
+&kp F9  &kp F10  &kp F11  &kp F12  &trans     &kp N0    &kp N1                &kp N2  &kp N3  &kp BSLH
+&trans  &trans   &trans   &trans   &trans     &kp DEL   &mt LEFT_SHIFT EQUAL  &trans  &trans  &trans
+            >;
+        };
+
+        SCROLL {
+            bindings = <
+&kp LC(LA(DELETE))  &trans  &trans  &trans  &trans       &kp LC(W)     &kp LC(PG_UP)     &kp LC(LG(D))   &kp LC(PG_DN)      &kp LC(P)
+&trans              &trans  &trans  &trans  &kp LG(TAB)  &kp LC(HOME)  &kp LC(LG(LEFT))  &kp LC(LG(F4))  &kp LC(LG(RIGHT))  &kp LC(END)
+&trans              &trans  &trans  &trans  &trans       &mkp MB4      &mkp MB1          &mkp MB3        &mkp MB2           &trans
+&trans              &trans  &trans  &trans  &kp LCTRL    &kp ESC       &kp ENTER         &trans          &trans             &trans
+            >;
+        };
+
+        BT {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &trans  &trans        &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &bootloader   &trans        &trans        &trans        &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans        &trans        &trans        &trans        &bt BT_CLR_ALL
             >;
         };
     };
